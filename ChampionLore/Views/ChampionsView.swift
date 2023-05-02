@@ -15,6 +15,7 @@ struct ChampionsView: View {
 
             List(model.decodedChampions) { champ in
                 Text(champ.name)
+                    .font(.title3)
             }
         }
     }
