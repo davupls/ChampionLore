@@ -23,7 +23,7 @@ This app is about reading. And some of the texts has a lot of paragraphs. So my 
 
 ### 3
 - 🧐 Create a single array of each "paragraphs / breakpoints"
-- 🤩 This method was recommended by a Mentor, and it made the most sense.
+- ❤️ This method was recommended by a Mentor, and it made the most sense.
 
 
 
@@ -38,4 +38,4 @@ This app is about reading. And some of the texts has a lot of paragraphs. So my 
 
 ### 3 
 - 🧐 Use Google extension "Easy Web Scrapper"
-- 🤩 This so far is the best solution. It automatically and accurately fnds the data I want. And converts the texts into good CSV's. Which I can then use convertcsv.com to create a JSON Array.
+- ❤️ This so far is the best solution. It automatically and accurately fnds the data I want. And converts the texts into good CSV's. Which I can then use convertcsv.com to create a JSON Array.
