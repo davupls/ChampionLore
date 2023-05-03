@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9345E1592A01E93500C62B9C /* ChampionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9345E1582A01E93500C62B9C /* ChampionDetailView.swift */; };
 		93BCA1E52A011C4C0088F3E3 /* ChampionLoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCA1E42A011C4C0088F3E3 /* ChampionLoreApp.swift */; };
 		93BCA1E72A011C4C0088F3E3 /* ChampionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BCA1E62A011C4C0088F3E3 /* ChampionsView.swift */; };
 		93BCA1E92A011C4E0088F3E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BCA1E82A011C4E0088F3E3 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9345E1582A01E93500C62B9C /* ChampionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionDetailView.swift; sourceTree = "<group>"; };
 		93BCA1E12A011C4C0088F3E3 /* ChampionLore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChampionLore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BCA1E42A011C4C0088F3E3 /* ChampionLoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionLoreApp.swift; sourceTree = "<group>"; };
 		93BCA1E62A011C4C0088F3E3 /* ChampionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				93BCA1E62A011C4C0088F3E3 /* ChampionsView.swift */,
+				9345E1582A01E93500C62B9C /* ChampionDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				93BCA1E72A011C4C0088F3E3 /* ChampionsView.swift in Sources */,
 				93BCA1E52A011C4C0088F3E3 /* ChampionLoreApp.swift in Sources */,
+				9345E1592A01E93500C62B9C /* ChampionDetailView.swift in Sources */,
 				93BCA1FB2A01232F0088F3E3 /* ChampionsModel.swift in Sources */,
 				93BCA1F72A0122590088F3E3 /* Champion.swift in Sources */,
 			);

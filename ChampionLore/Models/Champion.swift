@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Champion: Identifiable, Decodable {
+struct Champion: Identifiable, Decodable, Hashable {
     let id: Int
     let name: String
     let aka: String
