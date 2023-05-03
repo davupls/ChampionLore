@@ -35,7 +35,7 @@ struct ChampionsView: View {
                 ChampionDetailView(champ: champ)
             }
             .listStyle(.plain)
-            .navigationTitle("Champio Lores")
+            .navigationTitle("Champion Lores")
         }
     }
 }
