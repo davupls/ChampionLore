@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ChampionDetailView: View {
     let champ: Champion
+    @State var isShowingBio = false
+    @State var isShowingStory = false
     
     var body: some View {
         ScrollView {
@@ -16,63 +18,162 @@ struct ChampionDetailView: View {
                 detailHeader
                 Text(champ.slogan)
                     .italic()
-                    .kerning(1.0)
-                    .padding()
+                    .foregroundColor(.secondary)
+                    .padding(.vertical)
                 detailContent
-                Spacer()
+                buttonSheets
             }
-            .padding()
+            .padding(.horizontal)
             Spacer()
         }
-//        .background(Color("bgReadingColor"))
+        
     }
     
     
-    // MARK: HEADER
+    
+    // MARK: Header View Variable
     var detailHeader : some View {
-        HStack(alignment: .top){
-            Image(systemName: "pencil")
+        HStack(alignment: .center){
+            Image("\(champ.name.lowercased())-splash")
                 .resizable()
-                .scaledToFit()
-                .frame(width: 100)
-                .background(.blue)
+                .scaledToFill()
+                .offset(x: -30)
+                .frame(width: 120, height: 180)
+                .clipped()
+                .shadow(radius: 5)
+                .padding(.horizontal)
+
+                
+                
+                
+//                .background(.blue)
             
             VStack(alignment: .leading) {
                 Text(champ.name)
-                    .font(.title)
+                    .font(.largeTitle)
+                    .fontWeight(.medium)
                     .padding(.bottom, 2)
                 Text(champ.aka)
                     .foregroundColor(.secondary)
-                    .font(.subheadline)
+                    .font(.headline)
                 
             }
             Spacer()
         }
     }
     
-    // MARK: DETAIL
+    // MARK: Detail View Variable
     var detailContent: some View {
         VStack {
             Text(champ.intro)
                 .lineSpacing(CGFloat(10.0))
                 .font(.body)
-                
-                .kerning(/*@START_MENU_TOKEN@*/1.0/*@END_MENU_TOKEN@*/)
+                .kerning(1.0)
                 .padding(.bottom)
-                .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
-            
-            Button("Read More") {   }
-                .padding()
-                .foregroundColor(.white)
-                .background(.blue)
-                .padding()
+                .multilineTextAlignment(.leading)
         }
+    }
+    
+    // MARK: Button View Variable
+    var buttonSheets: some View {
+        
+        HStack(spacing: 30) {
+            
+            Button("Biography") {
+                isShowingBio = true
+            }
+            .buttonStyle()
+            .sheet(isPresented: $isShowingBio) {
+                ScrollView {
+                    VStack {
+                        Text("Biography")
+                            .titleStyle()
+                        ForEach(champ.bio, id: \.self) { para in
+                            Text(para)
+                                .longTextStyle()
+                        }
+                    }
+                    .padding()
+                }
+            }
+            
+            Button("Story") {
+                isShowingStory = true
+            }
+            .buttonStyle()
+            .sheet(isPresented: $isShowingStory) {
+                ScrollView {
+                    VStack {
+                        Text("Story")
+                            .titleStyle()
+                        VStack(alignment: .leading) {
+                            ForEach(champ.story, id: \.self) { para in
+                                Text(!para.isEmpty ? para : "No Story Avaiable as of now.")
+                                    .longTextStyle()
+                            }
+                        }
+                    }
+                    .padding()
+                }
+            }
+            
+        }
+    }
+    
+    
+}
+
+// MARK: Button Style Modifier View
+struct ButtonSheet: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(width: 130, height: 50)
+            .foregroundColor(.white)
+            .background(.blue)
+            .cornerRadius(5)
+    }
+}
+
+extension View {
+    func buttonStyle() -> some View {
+        modifier(ButtonSheet())
     }
 }
 
 
+// MARK: Long Text Modifier View
+
+struct LongTextFormat: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .kerning(1.0)
+            .lineSpacing(CGFloat(10))
+            .font(.body)
+            .padding(.bottom)
+    }
+}
+
+extension View {
+    func longTextStyle() -> some View {
+        modifier(LongTextFormat())
+    }
+}
 
 
+// MARK: Title View Modifier
+struct TitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .padding(.bottom)
+    }
+}
+
+extension View {
+    func titleStyle() -> some View {
+        modifier(TitleModifier())
+    }
+}
 
 
 
