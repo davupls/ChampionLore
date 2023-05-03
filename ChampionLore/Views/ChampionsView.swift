@@ -12,11 +12,14 @@ struct ChampionsView: View {
     
     var body: some View {
         VStack {
-
             List(model.decodedChampions) { champ in
-                Text(champ.name)
-                    .font(.title3)
-            }
+                VStack(alignment: .leading) {
+                    Text(champ.name)
+                        .font(.title2)
+                    Text(champ.slogan)
+                        .foregroundColor(.secondary).padding(.bottom)
+                }
+            }.listStyle(.plain)
         }
     }
 }
