@@ -12,6 +12,7 @@ struct Champion: Identifiable, Decodable, Hashable {
     let name: String
     let aka: String
     let slogan: String
+    let location: String
     let intro: String
     let bio : [String]
     let story: [String]

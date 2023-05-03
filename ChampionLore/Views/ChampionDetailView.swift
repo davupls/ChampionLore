@@ -11,14 +11,73 @@ struct ChampionDetailView: View {
     let champ: Champion
     
     var body: some View {
-        Text("Hello, World! \(champ.name)")
+        VStack {
+            
+            detailHeader
+            Text(champ.slogan)
+                .padding()
+            detailContent
+            Spacer()
+        }
+        .padding()
+        
+    }
+    
+    
+    // MARK: HEADER
+    var detailHeader : some View {
+        HStack{
+            Image(systemName: "pencil")
+            VStack(alignment: .leading) {
+                Text(champ.name)
+                Text(champ.aka)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+    
+    // MARK: DETAIL
+    var detailContent: some View {
+        VStack {
+            Text(champ.intro)
+            Button("Read More") {   }
+                .padding()
+                .foregroundColor(.white)
+                .background(.blue)
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 struct ChampionDetailView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ChampionDetailView(champ: Champion(id: 1, name: "Aatrox", aka: "The Darkin Blade", slogan: "I must destroy even hope...", intro: "Runeterra", bio: [
+        ChampionDetailView(champ: Champion(id: 1, name: "Aatrox", aka: "The Darkin Blade", slogan: "I must destroy even hope...", location: "Runeterra", intro: "Once honored defenders of Shurima against the Void, Aatrox and his brethren would eventually become an even greater threat to Runeterra, and were defeated only by cunning mortal sorcery. But after centuries of imprisonment, Aatrox was the first to find freedom once more, corrupting and transforming those foolish enough to try and wield the magical weapon that contained his essence. Now, with stolen flesh, he walks Runeterra in a brutal approximation of his previous form, seeking an apocalyptic and long overdue vengeance.", bio: [
             "Whether mistaken for a demon or god, many tales have been told of the Darkin Blade... but few know his real name, or the story of his fall.",
             "In ancient times, long before desert sands swallowed the empire, a mighty champion of Shurima was brought before the Sun Disc to become the avatar for a now forgotten celestial ideal. Remade as one of the Ascended, his wings were the golden light of dawn, and his armor sparkled like a constellation of hope from beyond the great veil.",
             "Aatrox was his name. He was at the vanguard of every noble conflict. So true and just was his conduct that other god-warriors would always gather at his side, and ten thousand mortals of Shurima marched behind him. When Setaka, the Ascended warrior-queen, called for his help against the rebellion of Icathia, Aatrox answered without hesitation.",
