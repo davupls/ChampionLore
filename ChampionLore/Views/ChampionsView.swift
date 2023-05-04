@@ -44,7 +44,12 @@ struct ContentView_Previews: PreviewProvider {
     static var model = ChampionsModel()
     
     static var previews: some View {
-        ChampionsView()
-            .environmentObject(model)
+        Group {
+            ChampionsView()
+                .environmentObject(model)
+            ChampionsView()
+                .environmentObject(model)
+                .preferredColorScheme(.dark)
+        }
     }
 }
